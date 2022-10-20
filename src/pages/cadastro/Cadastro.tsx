@@ -8,7 +8,7 @@ import { Grid } from "@mui/material";
 const Cadastro: React.FC = () => {
     return (
         <>
-         <SoulHeader titulo='CADASTRO' />
+         <SoulHeader href="/cadastro" titulo='CADASTRO' />
        
         <Grid container direction="column" justifyContent="center" alignItems="center" rowSpacing={1.5}>
             <Grid item sx={{mt: "5em"}}>
@@ -32,7 +32,7 @@ const Cadastro: React.FC = () => {
             </Grid>
 
             <Grid item>
-                <Link to="/">Voltar para o Login</Link>
+                <Link style={{ textDecoration: 'none', color: '#808080'}} to="/">Voltar para o Login</Link>
             </Grid>
 
         </Grid>

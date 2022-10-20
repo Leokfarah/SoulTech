@@ -9,6 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import SoulHeaderHome from './components/soulHeaderHome/SoulHeaderHome';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { FormControlLabel, Checkbox } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,8 +42,8 @@ function createData(
 }
 
 const rows = [
-  createData('Aprender React', 'Dar com a cabeça no teclado', 'concluído'),
-  createData('Arrumar trampo', 'Fazer boas entrevistas', 'não-concluido'),
+  createData('Aprender React', 'Dar com a cabeça no teclado', 'concluido'),
+  createData('Arrumar trampo', 'Fazer boas entrevistas', 'incompleto'),
 ];
 
 export default function CustomizedTables() {
@@ -62,10 +65,13 @@ export default function CustomizedTables() {
             <StyledTableRow>
               <StyledTableCell align="center">{row.titulo}</StyledTableCell>
               <StyledTableCell align="center">{row.descricao}</StyledTableCell>
-              <StyledTableCell align="center">{row.status}</StyledTableCell>
               <StyledTableCell align="center">
-                <Button variant="contained" color="success">Editar</Button>
-                <Button variant="contained" color="error">Excluir</Button>
+                <FormControlLabel control={<Checkbox color="success" />} label="Concluido" />
+                <FormControlLabel control={<Checkbox color="error" />} label="Incompleto" />
+                </StyledTableCell>
+              <StyledTableCell align="center">
+                <Button style={{marginRight: "0.5em"}} variant="contained" color="success" startIcon={<EditIcon />}>Editar</Button>
+                <Button variant="contained" color="error" startIcon={<DeleteIcon />}>Excluir</Button>
                 </StyledTableCell>
             </StyledTableRow>
           ))}
