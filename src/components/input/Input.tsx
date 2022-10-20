@@ -1,32 +1,23 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 interface InputProps {
+    id: string,
     label: string,
+    type: string,
 }
 
-const Input: React.FC<InputProps> = ({label}) => {
+const Input: React.FC<InputProps> = ({id, label, type}) => {
     return(  
+        <>
         
-            <Box
-            component="form"
-            sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-        >
-            <TextField
-          id="filled-search"
-          label={label}
-          type="text"
-          variant="filled"
-        />
+        <TextField
+            id={id}
+            label={label}
+            type={type}
+        /> 
 
-
-            </Box>
-        
+     </>   
     )
 }
 
