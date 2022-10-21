@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import SoulHeaderHome from './components/soulHeaderHome/SoulHeaderHome';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { FormControlLabel, Checkbox } from '@mui/material';
+import {FormControlLabel, Radio, RadioGroup } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -66,9 +66,11 @@ export default function CustomizedTables() {
               <StyledTableCell align="center">{row.titulo}</StyledTableCell>
               <StyledTableCell align="center">{row.descricao}</StyledTableCell>
               <StyledTableCell align="center">
-                <FormControlLabel control={<Checkbox color="success" />} label="Concluido" />
-                <FormControlLabel control={<Checkbox color="error" />} label="Incompleto" />
-                </StyledTableCell>
+               <RadioGroup name="use-radio-group" defaultValue="">
+                  <FormControlLabel value="completo" control={<Radio color="success" />} label="Completo" />
+                  <FormControlLabel value="incompleto" control={<Radio color="error" />} label="Incompleto" />
+                </RadioGroup>
+              </StyledTableCell>
               <StyledTableCell align="center">
                 <Button style={{marginRight: "0.5em"}} variant="contained" color="success" startIcon={<EditIcon />}>Editar</Button>
                 <Button variant="contained" color="error" startIcon={<DeleteIcon />}>Excluir</Button>
