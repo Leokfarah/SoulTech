@@ -1,23 +1,20 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
+import { InputProps } from '../../interfaces/Interfaces';
 
-interface InputProps {
-    id: string,
-    label: string,
-    type: string,
-}
 
-const Input: React.FC<InputProps> = ({id, label, type}) => {
-    return(  
+const Input: React.FC<InputProps> = ({ id, label, type, value, onChange }) => {
+
+    return (
         <>
-        
-        <TextField
-            id={id}
-            label={label}
-            type={type}
-        /> 
-
-     </>   
+            <TextField
+                id={id}
+                label={label}
+                type={type}
+                value={value}
+                onChange={onChange}
+            />
+        </>
     )
 }
 

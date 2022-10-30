@@ -3,14 +3,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import BiotechIcon from '@mui/icons-material/Biotech';
+import { SoulHeaderProps } from '../../interfaces/Interfaces';
 
-interface SoulHeaderProps {
-  titulo:string,
-  href: string,
-}
-
-
-function SoulHeader(props:SoulHeaderProps) {
+function SoulHeader(props: Partial<SoulHeaderProps>) {
 
   return (
     <AppBar position="static">

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,14 +10,12 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import BiotechIcon from '@mui/icons-material/Biotech';
+import { SoulHeaderProps } from '../../../../interfaces/Interfaces';
+
 
 const settings = ['Logout'];
 
-interface SoulHeaderProps {
-  titulo:string,
-}
-
-function SoulHeaderHome(props:SoulHeaderProps) {
+function SoulHeaderHome(props: Partial<SoulHeaderProps>) {
 
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
